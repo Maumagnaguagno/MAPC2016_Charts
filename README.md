@@ -1,8 +1,8 @@
-# MAPC2016_Charts
+# MAPC2016 Charts
 **Multi-Agent Programming Contest 2016 - Result Charts**
 
 Charts were generated from the [Multi-Agent Programming Contest 2016](https://multiagentcontest.org/2016/) results.
-They are online [here](maumagnaguagno.github.io/MAPC2016_Charts).
+They are online [here](https://maumagnaguagno.github.io/MAPC2016_Charts/).
 
 Each match between 2 teams resulted in 3 simulations of a 1000 steps each.
 Each simulation record is stored in a folder in which every step is recorded in XML format.
