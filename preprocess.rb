@@ -1,7 +1,7 @@
 begin
   if ARGV.empty?
     puts "Usage:
-  ruby analyze.rb matchX_folder
+  ruby preprocess.rb matchX_folder
   Writes CSV file at matchX_folder/matchX_folder.csv"
   else
     # Each simulation is a folder with 1001 XML step files
