@@ -42,9 +42,9 @@ Script ``analyze.rb`` reads datasets to solve the following questions:
 The script works in two modes:
 
 ```Shell
-# Read all CSV files it founds
+# Read all CSV files in folders at current dir
 ruby analyze.rb
-# Read only specified CSV files
+# Read specified CSV files (one or more)
 ruby analyze.rb "day1match1 BathTUB Python-DTU/City2016_BathTUBPython-DTU_2016-tournament-sim1of3_2016-09-12_13-00.csv"
 ```
 
