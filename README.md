@@ -32,7 +32,9 @@ Step,BathTUB,Python-DTU
 1000,-640533,49725
 ```
 
-The CSV files are used in Google Sheets to generate and publish the charts using Area charts (using row 1 as headers and column A as labels).
+The CSV files can be used with Google Sheets to generate and publish the charts using Area charts (using row 1 as headers and column A as labels).
+Currently the charts are generated using [Google Charts](https://developers.google.com/chart/interactive/docs/gallery/areachart) without Google Sheets.
+Although they look the same, Google charts use the files from the repository and generates the charts on the client-side instead of sending charts from Google Sheets.
 
 Script ``analyze.rb`` reads datasets to solve the following questions:
 - How much of the money in game each team have (total and percentage)?
