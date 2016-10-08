@@ -3,7 +3,7 @@
 
 Charts were generated from the [Multi-Agent Programming Contest 2016](https://multiagentcontest.org/2016/) results.
 
-They are online [here](https://maumagnaguagno.github.io/MAPC2016_Charts/).
+They are [online!](https://maumagnaguagno.github.io/MAPC2016_Charts/)
 
 Each match between 2 teams resulted in 3 simulations of a 1000 steps each.
 Each simulation record is stored in a folder with 1001 XML files referring to each simulation step.
@@ -34,7 +34,7 @@ Step,BathTUB,Python-DTU
 
 The CSV files can be used with Google Sheets to generate and publish the charts using Area charts (using row 1 as headers and column A as labels).
 Currently the charts are generated using [Google Charts](https://developers.google.com/chart/interactive/docs/gallery/areachart) without Google Sheets.
-Although they look the same, Google charts use the files from the repository and generates the charts on the client-side instead of sending charts from Google Sheets.
+Although they look the same, Google charts use the files from the repository and generates the charts on the client-side instead of transferring charts from Google Sheets.
 
 Script ``analyze.rb`` reads datasets to solve the following questions:
 - How much of the money in game each team have (total and percentage)?
