@@ -1,7 +1,7 @@
 # MAPC2016 Charts
 **Multi-Agent Programming Contest 2016 - Result Charts**
 
-Charts were generated from the [Multi-Agent Programming Contest 2016](https://multiagentcontest.org/2016/) results.
+Charts from the [Multi-Agent Programming Contest 2016](https://multiagentcontest.org/2016/) results.
 
 They are [online!](https://maumagnaguagno.github.io/MAPC2016_Charts/)
 
