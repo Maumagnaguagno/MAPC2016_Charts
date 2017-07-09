@@ -23,74 +23,34 @@
 <p>Obtain CSV files used to generate the following charts at <a href="https://github.com/Maumagnaguagno/MAPC2016_Charts">GitHub</a>.</p>
 
 <h3>BathTUB vs Python-DTU</h3>
-<div style="overflow: hidden;">
-<div id="chart_1" class="chart"></div>
-<div id="chart_2" class="chart"></div>
-<div id="chart_3" class="chart"></div>
-</div>
+<div id="c1" style="overflow: hidden;"></div>
 
 <h3>BathTUB vs PUCRS</h3>
-<div style="overflow: hidden;">
-<div id="chart_4" class="chart"></div>
-<div id="chart_5" class="chart"></div>
-<div id="chart_6" class="chart"></div>
-</div>
+<div id="c2"style="overflow: hidden;"></div>
 
 <h3>lampe vs PUCRS</h3>
-<div style="overflow: hidden;">
-<div id="chart_7" class="chart"></div>
-<div id="chart_8" class="chart"></div>
-<div id="chart_9" class="chart"></div>
-</div>
+<div id="c3"  style="overflow: hidden;"></div>
 
 <h3>Flisvos-2016 vs lampe</h3>
-<div style="overflow: hidden;">
-<div id="chart_10" class="chart"></div>
-<div id="chart_11" class="chart"></div>
-<div id="chart_12" class="chart"></div>
-</div>
+<div id="c4" style="overflow: hidden;"></div>
 
 <h3>Flisvos-2016 vs Python-DTU</h3>
-<div style="overflow: hidden;">
-<div id="chart_13" class="chart"></div>
-<div id="chart_14" class="chart"></div>
-<div id="chart_15" class="chart"></div>
-</div>
+<div id="c5" style="overflow: hidden;"></div>
 
 <h3>BathTUB vs Flisvos-2016</h3>
-<div style="overflow: hidden;">
-<div id="chart_16" class="chart"></div>
-<div id="chart_17" class="chart"></div>
-<div id="chart_18" class="chart"></div>
-</div>
+<div id="c6" style="overflow: hidden;"></div>
 
 <h3>Flisvos-2016 vs PUCRS</h3>
-<div style="overflow: hidden;">
-<div id="chart_19" class="chart"></div>
-<div id="chart_20" class="chart"></div>
-<div id="chart_21" class="chart"></div>
-</div>
+<div id="c7" style="overflow: hidden;"></div>
 
 <h3>PUCRS vs Python-DTU</h3>
-<div style="overflow: hidden;">
-<div id="chart_22" class="chart"></div>
-<div id="chart_23" class="chart"></div>
-<div id="chart_24" class="chart"></div>
-</div>
+<div id="c8" style="overflow: hidden;"></div>
 
 <h3>lampe vs Python-DTU</h3>
-<div style="overflow: hidden;">
-<div id="chart_25" class="chart"></div>
-<div id="chart_26" class="chart"></div>
-<div id="chart_27" class="chart"></div>
-</div>
+<div id="c9" style="overflow: hidden;"></div>
 
 <h3>BathTUB vs lampe</h3>
-<div style="overflow: hidden;">
-<div id="chart_28" class="chart"></div>
-<div id="chart_29" class="chart"></div>
-<div id="chart_30" class="chart"></div>
-</div>
+<div id="c10" style="overflow: hidden;"></div>
 
 <script type="text/javascript">
 
@@ -98,48 +58,52 @@ google.charts.load('current', {'packages':['corechart']});
 google.charts.setOnLoadCallback(draw);
 
 function draw() {
-  drawChart("chart_1", 1, "day1match1 BathTUB Python-DTU/City2016_BathTUBPython-DTU_2016-tournament-sim1of3_2016-09-12_13-00.csv");
-  drawChart("chart_2", 2, "day1match1 BathTUB Python-DTU/City2016_BathTUBPython-DTU_2016-tournament-sim2of3_2016-09-12_13-21.csv");
-  drawChart("chart_3", 3, "day1match1 BathTUB Python-DTU/City2016_BathTUBPython-DTU_2016-tournament-sim3of3_2016-09-12_13-41.csv");
+  drawChart("c1", 1, "day1match1 BathTUB Python-DTU/City2016_BathTUBPython-DTU_2016-tournament-sim1of3_2016-09-12_13-00.csv");
+  drawChart("c1", 2, "day1match1 BathTUB Python-DTU/City2016_BathTUBPython-DTU_2016-tournament-sim2of3_2016-09-12_13-21.csv");
+  drawChart("c1", 3, "day1match1 BathTUB Python-DTU/City2016_BathTUBPython-DTU_2016-tournament-sim3of3_2016-09-12_13-41.csv");
 
-  drawChart("chart_4", 1, "day1match2 BathTUB PUCRS/City2016_BathTUBPUCRS_2016-tournament-sim1of3_2016-09-12_14-23.csv");
-  drawChart("chart_5", 2, "day1match2 BathTUB PUCRS/City2016_BathTUBPUCRS_2016-tournament-sim2of3_2016-09-12_14-51.csv");
-  drawChart("chart_6", 3, "day1match2 BathTUB PUCRS/City2016_BathTUBPUCRS_2016-tournament-sim3of3_2016-09-12_15-22.csv");
+  drawChart("c2", 1, "day1match2 BathTUB PUCRS/City2016_BathTUBPUCRS_2016-tournament-sim1of3_2016-09-12_14-23.csv");
+  drawChart("c2", 2, "day1match2 BathTUB PUCRS/City2016_BathTUBPUCRS_2016-tournament-sim2of3_2016-09-12_14-51.csv");
+  drawChart("c2", 3, "day1match2 BathTUB PUCRS/City2016_BathTUBPUCRS_2016-tournament-sim3of3_2016-09-12_15-22.csv");
 
-  drawChart("chart_7", 1, "day1match3 lampe PUCRS/City2016_lampePUCRS_2016-tournament-sim1of3_2016-09-12_16-00.csv");
-  drawChart("chart_8", 2, "day1match3 lampe PUCRS/City2016_lampePUCRS_2016-tournament-sim2of3_2016-09-12_16-26.csv");
-  drawChart("chart_9", 3, "day1match3 lampe PUCRS/City2016_lampePUCRS_2016-tournament-sim3of3_2016-09-12_17-08.csv");
+  drawChart("c3", 1, "day1match3 lampe PUCRS/City2016_lampePUCRS_2016-tournament-sim1of3_2016-09-12_16-00.csv");
+  drawChart("c3", 2, "day1match3 lampe PUCRS/City2016_lampePUCRS_2016-tournament-sim2of3_2016-09-12_16-26.csv");
+  drawChart("c3", 3, "day1match3 lampe PUCRS/City2016_lampePUCRS_2016-tournament-sim3of3_2016-09-12_17-08.csv");
 
-  drawChart("chart_10", 1, "day1match4 Flisvos2016 lampe/City2016_Flisvos-2016lampe_2016-tournament-sim1of3_2016-09-12_13-00.csv");
-  drawChart("chart_11", 2, "day1match4 Flisvos2016 lampe/City2016_Flisvos-2016lampe_2016-tournament-sim2of3_2016-09-12_13-08.csv");
-  drawChart("chart_12", 3, "day1match4 Flisvos2016 lampe/City2016_Flisvos-2016lampe_2016-tournament-sim3of3_2016-09-12_13-14.csv");
+  drawChart("c4", 1, "day1match4 Flisvos2016 lampe/City2016_Flisvos-2016lampe_2016-tournament-sim1of3_2016-09-12_13-00.csv");
+  drawChart("c4", 2, "day1match4 Flisvos2016 lampe/City2016_Flisvos-2016lampe_2016-tournament-sim2of3_2016-09-12_13-08.csv");
+  drawChart("c4", 3, "day1match4 Flisvos2016 lampe/City2016_Flisvos-2016lampe_2016-tournament-sim3of3_2016-09-12_13-14.csv");
 
-  drawChart("chart_13", 1, "day1match5 Flisvos-2016 Python-DTU/City2016_Flisvos-2016Python-DTU_2016-tournament-sim1of3_2016-09-12_14-23.csv");
-  drawChart("chart_14", 2, "day1match5 Flisvos-2016 Python-DTU/City2016_Flisvos-2016Python-DTU_2016-tournament-sim2of3_2016-09-12_14-32.csv");
-  drawChart("chart_15", 3, "day1match5 Flisvos-2016 Python-DTU/City2016_Flisvos-2016Python-DTU_2016-tournament-sim3of3_2016-09-12_14-39.csv");
+  drawChart("c5", 1, "day1match5 Flisvos-2016 Python-DTU/City2016_Flisvos-2016Python-DTU_2016-tournament-sim1of3_2016-09-12_14-23.csv");
+  drawChart("c5", 2, "day1match5 Flisvos-2016 Python-DTU/City2016_Flisvos-2016Python-DTU_2016-tournament-sim2of3_2016-09-12_14-32.csv");
+  drawChart("c5", 3, "day1match5 Flisvos-2016 Python-DTU/City2016_Flisvos-2016Python-DTU_2016-tournament-sim3of3_2016-09-12_14-39.csv");
 
-  drawChart("chart_16", 1, "day2match1 BathTUB Flisvos-2016/City2016_BathTUBFlisvos-2016_2016-tournament-sim1of3_2016-09-13_13-28.csv");
-  drawChart("chart_17", 2, "day2match1 BathTUB Flisvos-2016/City2016_BathTUBFlisvos-2016_2016-tournament-sim2of3_2016-09-13_13-46.csv");
-  drawChart("chart_18", 3, "day2match1 BathTUB Flisvos-2016/City2016_BathTUBFlisvos-2016_2016-tournament-sim3of3_2016-09-13_14-04.csv");
+  drawChart("c6", 1, "day2match1 BathTUB Flisvos-2016/City2016_BathTUBFlisvos-2016_2016-tournament-sim1of3_2016-09-13_13-28.csv");
+  drawChart("c6", 2, "day2match1 BathTUB Flisvos-2016/City2016_BathTUBFlisvos-2016_2016-tournament-sim2of3_2016-09-13_13-46.csv");
+  drawChart("c6", 3, "day2match1 BathTUB Flisvos-2016/City2016_BathTUBFlisvos-2016_2016-tournament-sim3of3_2016-09-13_14-04.csv");
 
-  drawChart("chart_19", 1, "day2match2 Flisvos-2016 PUCRS/City2016_Flisvos-2016PUCRS_2016-tournament-sim1of3_2016-09-13_14-31.csv");
-  drawChart("chart_20", 2, "day2match2 Flisvos-2016 PUCRS/City2016_Flisvos-2016PUCRS_2016-tournament-sim2of3_2016-09-13_14-57.csv");
-  drawChart("chart_21", 3, "day2match2 Flisvos-2016 PUCRS/City2016_Flisvos-2016PUCRS_2016-tournament-sim3of3_2016-09-13_15-23.csv");
+  drawChart("c7", 1, "day2match2 Flisvos-2016 PUCRS/City2016_Flisvos-2016PUCRS_2016-tournament-sim1of3_2016-09-13_14-31.csv");
+  drawChart("c7", 2, "day2match2 Flisvos-2016 PUCRS/City2016_Flisvos-2016PUCRS_2016-tournament-sim2of3_2016-09-13_14-57.csv");
+  drawChart("c7", 3, "day2match2 Flisvos-2016 PUCRS/City2016_Flisvos-2016PUCRS_2016-tournament-sim3of3_2016-09-13_15-23.csv");
 
-  drawChart("chart_22", 1, "day2match3 PUCRS Python-DTU/City2016_PUCRSPython-DTU_2016-tournament-sim1of3_2016-09-13_16-07.csv");
-  drawChart("chart_23", 2, "day2match3 PUCRS Python-DTU/City2016_PUCRSPython-DTU_2016-tournament-sim2of3_2016-09-13_16-32.csv");
-  drawChart("chart_24", 3, "day2match3 PUCRS Python-DTU/City2016_PUCRSPython-DTU_2016-tournament-sim3of3_2016-09-13_16-56.csv");
+  drawChart("c8", 1, "day2match3 PUCRS Python-DTU/City2016_PUCRSPython-DTU_2016-tournament-sim1of3_2016-09-13_16-07.csv");
+  drawChart("c8", 2, "day2match3 PUCRS Python-DTU/City2016_PUCRSPython-DTU_2016-tournament-sim2of3_2016-09-13_16-32.csv");
+  drawChart("c8", 3, "day2match3 PUCRS Python-DTU/City2016_PUCRSPython-DTU_2016-tournament-sim3of3_2016-09-13_16-56.csv");
 
-  drawChart("chart_25", 1, "day2match4 lampe Python-DTU/City2016_lampePython-DTU_2016-tournament-sim1of3_2016-09-13_13-00.csv");
-  drawChart("chart_26", 2, "day2match4 lampe Python-DTU/City2016_lampePython-DTU_2016-tournament-sim2of3_2016-09-13_13-54.csv");
-  drawChart("chart_27", 3, "day2match4 lampe Python-DTU/City2016_lampePython-DTU_2016-tournament-sim3of3_2016-09-13_13-59.csv");
+  drawChart("c9", 1, "day2match4 lampe Python-DTU/City2016_lampePython-DTU_2016-tournament-sim1of3_2016-09-13_13-00.csv");
+  drawChart("c9", 2, "day2match4 lampe Python-DTU/City2016_lampePython-DTU_2016-tournament-sim2of3_2016-09-13_13-54.csv");
+  drawChart("c9", 3, "day2match4 lampe Python-DTU/City2016_lampePython-DTU_2016-tournament-sim3of3_2016-09-13_13-59.csv");
 
-  drawChart("chart_28", 1, "day2match5 BathTUB lampe/City2016_BathTUBlampe_2016-tournament-sim1of3_2016-09-13_14-32.csv");
-  drawChart("chart_29", 2, "day2match5 BathTUB lampe/City2016_BathTUBlampe_2016-tournament-sim2of3_2016-09-13_14-59.csv");
-  drawChart("chart_30", 3, "day2match5 BathTUB lampe/City2016_BathTUBlampe_2016-tournament-sim3of3_2016-09-13_15-26.csv");
+  drawChart("c10", 1, "day2match5 BathTUB lampe/City2016_BathTUBlampe_2016-tournament-sim1of3_2016-09-13_14-32.csv");
+  drawChart("c10", 2, "day2match5 BathTUB lampe/City2016_BathTUBlampe_2016-tournament-sim2of3_2016-09-13_14-59.csv");
+  drawChart("c10", 3, "day2match5 BathTUB lampe/City2016_BathTUBlampe_2016-tournament-sim3of3_2016-09-13_15-26.csv");
 }
 
 function drawChart(div, index, csv) {
+  var chart_div = document.createElement('div');
+  chart_div.className = 'chart';
+  document.getElementById(div).appendChild(chart_div);
+
   d3.text(csv, function(data) {
     data = d3.csv.parseRows(data);
     for(var j = 1; j <= 1001; ++j) {
@@ -148,7 +112,7 @@ function drawChart(div, index, csv) {
       data[j][2] = +data[j][2];
     }
 
-    new google.visualization.AreaChart(document.getElementById(div)).draw(
+    new google.visualization.AreaChart(chart_div).draw(
       google.visualization.arrayToDataTable(data),
       {
         title: data[0][1] + " vs " + data[0][2] + " - simulation " + index + " of 3",
