@@ -114,9 +114,9 @@ function drawChart(div, index, csv) {
       google.visualization.arrayToDataTable(data),
       {
         title: data[0][1] + " vs " + data[0][2] + " - simulation " + index + " of 3",
-        titleTextStyle: {fontName: "arial", fontSize: 16},
-        hAxis: {title: 'Steps', format: ''},
-        vAxis: {title: 'Money', format: ''}
+        titleTextStyle: {fontSize: 16},
+        hAxis: {title: "Steps"},
+        vAxis: {title: "Money"}
       }
     );
   });
