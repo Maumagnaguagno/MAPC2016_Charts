@@ -14,6 +14,6 @@ begin
       xml =~ /<team jobs="[^"]*" money="([^"]*)" name="([^"]*)"\/>\n<team jobs="[^"]*" money="([^"]*)" name="([^"]*)"\/>/
       values << "\n#{index},#{$1},#{$3}"
     }
-    IO.write("#{xml_folder}/#{xml_folder}.csv", "Step,#{$2},#{$4}" << values)
+    IO.binwrite("#{xml_folder}/#{xml_folder}.csv", "Step,#{$2},#{$4}" << values)
   end
 end
