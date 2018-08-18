@@ -9,7 +9,6 @@
     .chart { width: 600px; height: 371px; float: left }
   </style>
   <script src="https://www.gstatic.com/charts/loader.js"></script>
-  <script src="https://d3js.org/d3.v3.min.js"></script>
 </head>
 
 <body>
@@ -102,24 +101,34 @@ function drawChart(div, index, csv) {
   chart_div.className = 'chart';
   document.getElementById(div).appendChild(chart_div);
 
-  d3.text(csv, function(data) {
-    data = d3.csv.parseRows(data);
-    for(var j = 1; j <= 1001; ++j) {
-      data[j][0] = +data[j][0];
-      data[j][1] = +data[j][1];
-      data[j][2] = +data[j][2];
-    }
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', csv);
+  xhr.send(null);
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState === 4) {
+      if (xhr.status === 200) {
+        data = xhr.responseText.split("\n");
+        data[0] = data[0].split(",");
+        for(var j = 1; j <= 1001; ++j) {
+          data[j] = data[j].split(",")
+          data[j][0] = +data[j][0];
+          data[j][1] = +data[j][1];
+          data[j][2] = +data[j][2];
+        }
 
-    new google.visualization.AreaChart(chart_div).draw(
-      google.visualization.arrayToDataTable(data),
-      {
-        title: data[0][1] + " vs " + data[0][2] + " - simulation " + index + " of 3",
-        titleTextStyle: {fontSize: 16},
-        hAxis: {title: "Steps"},
-        vAxis: {title: "Money"}
+        new google.visualization.AreaChart(chart_div).draw(
+          google.visualization.arrayToDataTable(data), {
+            title: data[0][1] + " vs " + data[0][2] + " - simulation " + index + " of 3",
+            titleTextStyle: {fontSize: 16},
+            hAxis: {title: "Steps"},
+            vAxis: {title: "Money"}
+          }
+        );
+      } else {
+        console.log("Error: " + xhr.status + " for " + csv);
       }
-    );
-  });
+    }
+  };
 }
 
 </script>
