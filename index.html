@@ -51,7 +51,7 @@ Obtain CSV files used to generate the following charts at <a href="https://githu
 
 <script>
 
-google.charts.load('current', {'packages':['corechart']});
+google.charts.load("current", {"packages":["corechart"]});
 google.charts.setOnLoadCallback(draw);
 
 function draw() {
@@ -97,14 +97,14 @@ function draw() {
 }
 
 function drawChart(div, index, csv) {
-  var chart_div = document.createElement('div');
-  chart_div.className = 'chart';
+  var chart_div = document.createElement("div");
+  chart_div.className = "chart";
   document.getElementById(div).appendChild(chart_div);
 
   var xhr = new XMLHttpRequest();
-  xhr.open('GET', csv);
+  xhr.open("GET", csv);
   xhr.send(null);
-  xhr.onreadystatechange = function () {
+  xhr.onreadystatechange = function() {
     if (xhr.readyState === 4) {
       if (xhr.status === 200) {
         data = xhr.responseText.split("\n");
