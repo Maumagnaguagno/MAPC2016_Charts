@@ -110,10 +110,7 @@ function drawChart(div, index, csv) {
         data = xhr.responseText.split("\n");
         data[0] = data[0].split(",");
         for(var j = 1; j <= 1001; ++j) {
-          data[j] = data[j].split(",")
-          data[j][0] = +data[j][0];
-          data[j][1] = +data[j][1];
-          data[j][2] = +data[j][2];
+          data[j] = data[j].split(",").map(Number);
         }
 
         new google.visualization.AreaChart(chart_div).draw(
