@@ -18,7 +18,7 @@ begin
     team_b = csv[0][2]
     money_a = csv[1001][1]
     money_b = csv[1001][2]
-    puts "#{team_a} vs #{team_b} - simulation #{dataset.match(/sim(\d+)of3/)[1]} of 3".center(50, '_'),
+    puts "#{team_a} vs #{team_b} - simulation #{dataset[/sim(\d+)of3/,1]} of 3".center(50, '_'),
          sprintf('%14s made %12d$ (%.2f%%)', team_a, money_a, money_a.fdiv(money_a.abs + money_b.abs) * 100),
          sprintf('%14s made %12d$ (%.2f%%)', team_b, money_b, money_b.fdiv(money_a.abs + money_b.abs) * 100),
          sprintf('%14s dominated %4d steps (%.2f%%)', team_a, dominion_a, dominion_a.fdiv(10)),
