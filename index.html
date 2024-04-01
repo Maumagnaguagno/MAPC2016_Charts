@@ -100,31 +100,22 @@ function drawChart(index, csv) {
   chart_div.className = "chart";
   document.getElementById("c" + ~~(index / 3)).appendChild(chart_div);
 
-  var xhr = new XMLHttpRequest();
-  xhr.open("GET", csv);
-  xhr.send(null);
-  xhr.onreadystatechange = function() {
-    if (xhr.readyState === 4) {
-      if (xhr.status === 200) {
-        data = xhr.responseText.split("\n");
-        data[0] = data[0].split(",");
-        for(var j = 1; j <= 1001; ++j) {
-          data[j] = data[j].split(",").map(Number);
-        }
-
-        new google.visualization.AreaChart(chart_div).draw(
-          google.visualization.arrayToDataTable(data), {
-            title: data[0][1] + " vs " + data[0][2] + " - simulation " + (index % 3 + 1) + " of 3",
-            titleTextStyle: {fontSize: 16},
-            hAxis: {title: "Steps"},
-            vAxis: {title: "Money"}
-          }
-        );
-      } else {
-        console.log("Error: " + xhr.status + " for " + csv);
-      }
+  fetch(csv).then(r => r.text()).then(data => {
+    data = data.split("\n");
+    data[0] = data[0].split(",");
+    for(var j = 1; j <= 1001; ++j) {
+      data[j] = data[j].split(",").map(Number);
     }
-  };
+
+    new google.visualization.AreaChart(chart_div).draw(
+      google.visualization.arrayToDataTable(data), {
+        title: data[0][1] + " vs " + data[0][2] + " - simulation " + (index % 3 + 1) + " of 3",
+        titleTextStyle: {fontSize: 16},
+        hAxis: {title: "Steps"},
+        vAxis: {title: "Money"}
+      }
+    );
+  });
 }
 
 </script>
