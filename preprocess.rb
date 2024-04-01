@@ -5,7 +5,7 @@ begin
   Writes CSV file at matchX_folder/matchX_folder.csv"
   else
     # Each simulation is a folder with 1001 XML step files
-    xml_folder = ARGV.first
+    xml_folder = ARGV[0]
     values = ''
     1001.times {|index|
       # <team jobs="XXX" money="($1)" name="($2)"/>
