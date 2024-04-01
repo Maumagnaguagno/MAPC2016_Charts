@@ -98,7 +98,7 @@ function draw() {
 function drawChart(index, csv) {
   var chart_div = document.createElement("div");
   chart_div.className = "chart";
-  document.getElementById("c" + (index / 3)).appendChild(chart_div);
+  document.getElementById("c" + ~~(index / 3)).appendChild(chart_div);
 
   var xhr = new XMLHttpRequest();
   xhr.open("GET", csv);
