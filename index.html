@@ -49,75 +49,57 @@ Obtain CSV files used to generate the following charts at <a href=https://github
 <div id=c9></div>
 
 <script>
-
-google.charts.load("current", {"packages":["corechart"]});
-google.charts.setOnLoadCallback(draw);
-
-function draw() {
-  drawChart(0, "day1match1 BathTUB Python-DTU/City2016_BathTUBPython-DTU_2016-tournament-sim1of3_2016-09-12_13-00.csv");
-  drawChart(1, "day1match1 BathTUB Python-DTU/City2016_BathTUBPython-DTU_2016-tournament-sim2of3_2016-09-12_13-21.csv");
-  drawChart(2, "day1match1 BathTUB Python-DTU/City2016_BathTUBPython-DTU_2016-tournament-sim3of3_2016-09-12_13-41.csv");
-
-  drawChart(3, "day1match2 BathTUB PUCRS/City2016_BathTUBPUCRS_2016-tournament-sim1of3_2016-09-12_14-23.csv");
-  drawChart(4, "day1match2 BathTUB PUCRS/City2016_BathTUBPUCRS_2016-tournament-sim2of3_2016-09-12_14-51.csv");
-  drawChart(5, "day1match2 BathTUB PUCRS/City2016_BathTUBPUCRS_2016-tournament-sim3of3_2016-09-12_15-22.csv");
-
-  drawChart(6, "day1match3 lampe PUCRS/City2016_lampePUCRS_2016-tournament-sim1of3_2016-09-12_16-00.csv");
-  drawChart(7, "day1match3 lampe PUCRS/City2016_lampePUCRS_2016-tournament-sim2of3_2016-09-12_16-26.csv");
-  drawChart(8, "day1match3 lampe PUCRS/City2016_lampePUCRS_2016-tournament-sim3of3_2016-09-12_17-08.csv");
-
-  drawChart(9, "day1match4 Flisvos2016 lampe/City2016_Flisvos-2016lampe_2016-tournament-sim1of3_2016-09-12_13-00.csv");
-  drawChart(10, "day1match4 Flisvos2016 lampe/City2016_Flisvos-2016lampe_2016-tournament-sim2of3_2016-09-12_13-08.csv");
-  drawChart(11, "day1match4 Flisvos2016 lampe/City2016_Flisvos-2016lampe_2016-tournament-sim3of3_2016-09-12_13-14.csv");
-
-  drawChart(12, "day1match5 Flisvos-2016 Python-DTU/City2016_Flisvos-2016Python-DTU_2016-tournament-sim1of3_2016-09-12_14-23.csv");
-  drawChart(13, "day1match5 Flisvos-2016 Python-DTU/City2016_Flisvos-2016Python-DTU_2016-tournament-sim2of3_2016-09-12_14-32.csv");
-  drawChart(14, "day1match5 Flisvos-2016 Python-DTU/City2016_Flisvos-2016Python-DTU_2016-tournament-sim3of3_2016-09-12_14-39.csv");
-
-  drawChart(15, "day2match1 BathTUB Flisvos-2016/City2016_BathTUBFlisvos-2016_2016-tournament-sim1of3_2016-09-13_13-28.csv");
-  drawChart(16, "day2match1 BathTUB Flisvos-2016/City2016_BathTUBFlisvos-2016_2016-tournament-sim2of3_2016-09-13_13-46.csv");
-  drawChart(17, "day2match1 BathTUB Flisvos-2016/City2016_BathTUBFlisvos-2016_2016-tournament-sim3of3_2016-09-13_14-04.csv");
-
-  drawChart(18, "day2match2 Flisvos-2016 PUCRS/City2016_Flisvos-2016PUCRS_2016-tournament-sim1of3_2016-09-13_14-31.csv");
-  drawChart(19, "day2match2 Flisvos-2016 PUCRS/City2016_Flisvos-2016PUCRS_2016-tournament-sim2of3_2016-09-13_14-57.csv");
-  drawChart(20, "day2match2 Flisvos-2016 PUCRS/City2016_Flisvos-2016PUCRS_2016-tournament-sim3of3_2016-09-13_15-23.csv");
-
-  drawChart(21, "day2match3 PUCRS Python-DTU/City2016_PUCRSPython-DTU_2016-tournament-sim1of3_2016-09-13_16-07.csv");
-  drawChart(22, "day2match3 PUCRS Python-DTU/City2016_PUCRSPython-DTU_2016-tournament-sim2of3_2016-09-13_16-32.csv");
-  drawChart(23, "day2match3 PUCRS Python-DTU/City2016_PUCRSPython-DTU_2016-tournament-sim3of3_2016-09-13_16-56.csv");
-
-  drawChart(24, "day2match4 lampe Python-DTU/City2016_lampePython-DTU_2016-tournament-sim1of3_2016-09-13_13-00.csv");
-  drawChart(25, "day2match4 lampe Python-DTU/City2016_lampePython-DTU_2016-tournament-sim2of3_2016-09-13_13-54.csv");
-  drawChart(26, "day2match4 lampe Python-DTU/City2016_lampePython-DTU_2016-tournament-sim3of3_2016-09-13_13-59.csv");
-
-  drawChart(27, "day2match5 BathTUB lampe/City2016_BathTUBlampe_2016-tournament-sim1of3_2016-09-13_14-32.csv");
-  drawChart(28, "day2match5 BathTUB lampe/City2016_BathTUBlampe_2016-tournament-sim2of3_2016-09-13_14-59.csv");
-  drawChart(29, "day2match5 BathTUB lampe/City2016_BathTUBlampe_2016-tournament-sim3of3_2016-09-13_15-26.csv");
-}
-
-function drawChart(index, csv) {
-  var chart_div = document.createElement("div");
-  chart_div.className = "chart";
-  document.getElementById("c" + ~~(index / 3)).appendChild(chart_div);
-
-  fetch(csv).then(r => r.text()).then(data => {
-    data = data.split("\n");
-    data[0] = data[0].split(",");
-    for(var j = 1; j <= 1001; ++j) {
-      data[j] = data[j].split(",").map(Number);
-    }
-
-    new google.visualization.AreaChart(chart_div).draw(
-      google.visualization.arrayToDataTable(data), {
-        title: data[0][1] + " vs " + data[0][2] + " - simulation " + (index % 3 + 1) + " of 3",
-        titleTextStyle: {fontSize: 16},
-        hAxis: {title: "Steps"},
-        vAxis: {title: "Money"}
-      }
-    );
+google.charts.load("current", {"packages":["corechart"]}).then(function() {
+  [
+    "day1match1 BathTUB Python-DTU/City2016_BathTUBPython-DTU_2016-tournament-sim1of3_2016-09-12_13-00.csv",
+    "day1match1 BathTUB Python-DTU/City2016_BathTUBPython-DTU_2016-tournament-sim2of3_2016-09-12_13-21.csv",
+    "day1match1 BathTUB Python-DTU/City2016_BathTUBPython-DTU_2016-tournament-sim3of3_2016-09-12_13-41.csv",
+    "day1match2 BathTUB PUCRS/City2016_BathTUBPUCRS_2016-tournament-sim1of3_2016-09-12_14-23.csv",
+    "day1match2 BathTUB PUCRS/City2016_BathTUBPUCRS_2016-tournament-sim2of3_2016-09-12_14-51.csv",
+    "day1match2 BathTUB PUCRS/City2016_BathTUBPUCRS_2016-tournament-sim3of3_2016-09-12_15-22.csv",
+    "day1match3 lampe PUCRS/City2016_lampePUCRS_2016-tournament-sim1of3_2016-09-12_16-00.csv",
+    "day1match3 lampe PUCRS/City2016_lampePUCRS_2016-tournament-sim2of3_2016-09-12_16-26.csv",
+    "day1match3 lampe PUCRS/City2016_lampePUCRS_2016-tournament-sim3of3_2016-09-12_17-08.csv",
+    "day1match4 Flisvos2016 lampe/City2016_Flisvos-2016lampe_2016-tournament-sim1of3_2016-09-12_13-00.csv",
+    "day1match4 Flisvos2016 lampe/City2016_Flisvos-2016lampe_2016-tournament-sim2of3_2016-09-12_13-08.csv",
+    "day1match4 Flisvos2016 lampe/City2016_Flisvos-2016lampe_2016-tournament-sim3of3_2016-09-12_13-14.csv",
+    "day1match5 Flisvos-2016 Python-DTU/City2016_Flisvos-2016Python-DTU_2016-tournament-sim1of3_2016-09-12_14-23.csv",
+    "day1match5 Flisvos-2016 Python-DTU/City2016_Flisvos-2016Python-DTU_2016-tournament-sim2of3_2016-09-12_14-32.csv",
+    "day1match5 Flisvos-2016 Python-DTU/City2016_Flisvos-2016Python-DTU_2016-tournament-sim3of3_2016-09-12_14-39.csv",
+    "day2match1 BathTUB Flisvos-2016/City2016_BathTUBFlisvos-2016_2016-tournament-sim1of3_2016-09-13_13-28.csv",
+    "day2match1 BathTUB Flisvos-2016/City2016_BathTUBFlisvos-2016_2016-tournament-sim2of3_2016-09-13_13-46.csv",
+    "day2match1 BathTUB Flisvos-2016/City2016_BathTUBFlisvos-2016_2016-tournament-sim3of3_2016-09-13_14-04.csv",
+    "day2match2 Flisvos-2016 PUCRS/City2016_Flisvos-2016PUCRS_2016-tournament-sim1of3_2016-09-13_14-31.csv",
+    "day2match2 Flisvos-2016 PUCRS/City2016_Flisvos-2016PUCRS_2016-tournament-sim2of3_2016-09-13_14-57.csv",
+    "day2match2 Flisvos-2016 PUCRS/City2016_Flisvos-2016PUCRS_2016-tournament-sim3of3_2016-09-13_15-23.csv",
+    "day2match3 PUCRS Python-DTU/City2016_PUCRSPython-DTU_2016-tournament-sim1of3_2016-09-13_16-07.csv",
+    "day2match3 PUCRS Python-DTU/City2016_PUCRSPython-DTU_2016-tournament-sim2of3_2016-09-13_16-32.csv",
+    "day2match3 PUCRS Python-DTU/City2016_PUCRSPython-DTU_2016-tournament-sim3of3_2016-09-13_16-56.csv",
+    "day2match4 lampe Python-DTU/City2016_lampePython-DTU_2016-tournament-sim1of3_2016-09-13_13-00.csv",
+    "day2match4 lampe Python-DTU/City2016_lampePython-DTU_2016-tournament-sim2of3_2016-09-13_13-54.csv",
+    "day2match4 lampe Python-DTU/City2016_lampePython-DTU_2016-tournament-sim3of3_2016-09-13_13-59.csv",
+    "day2match5 BathTUB lampe/City2016_BathTUBlampe_2016-tournament-sim1of3_2016-09-13_14-32.csv",
+    "day2match5 BathTUB lampe/City2016_BathTUBlampe_2016-tournament-sim2of3_2016-09-13_14-59.csv",
+    "day2match5 BathTUB lampe/City2016_BathTUBlampe_2016-tournament-sim3of3_2016-09-13_15-26.csv"
+  ].forEach((csv, index) => {
+    var chart_div = document.createElement("div");
+    chart_div.className = "chart";
+    document.getElementById("c" + ~~(index / 3)).appendChild(chart_div);
+    fetch(csv).then(r => r.text()).then(data => {
+      data = data.split("\n");
+      data[0] = data[0].split(",");
+      for(var j = 1; j <= 1001; ++j) data[j] = data[j].split(",").map(Number);
+      new google.visualization.AreaChart(chart_div).draw(
+        google.visualization.arrayToDataTable(data), {
+          title: data[0][1] + " vs " + data[0][2] + " - simulation " + (index % 3 + 1) + " of 3",
+          titleTextStyle: {fontSize: 16},
+          hAxis: {title: "Steps"},
+          vAxis: {title: "Money"}
+        }
+      );
+    });
   });
-}
-
+});
 </script>
 </body>
 </html>
