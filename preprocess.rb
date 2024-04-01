@@ -10,10 +10,10 @@ begin
     1001.times {|index|
       # <team jobs="XXX" money="($1)" name="($2)"/>
       # <team jobs="XXX" money="($3)" name="($4)"/>
-      xml = IO.read("#{xml_folder}/#{xml_folder}_#{index}.xml")
+      xml = File.binread("#{xml_folder}/#{xml_folder}_#{index}.xml")
       xml =~ /<team jobs="[^"]*" money="([^"]*)" name="([^"]*)"\/>\n<team jobs="[^"]*" money="([^"]*)" name="([^"]*)"\/>/
       values << "\n#{index},#{$1},#{$3}"
     }
-    IO.binwrite("#{xml_folder}/#{xml_folder}.csv", "Step,#{$2},#{$4}" << values)
+    File.binwrite("#{xml_folder}/#{xml_folder}.csv", "Step,#{$2},#{$4}" << values)
   end
 end

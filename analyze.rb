@@ -1,7 +1,7 @@
 begin
   # Use all datasets if none given
   (ARGV.empty? ? Dir.glob('*/*.csv') : ARGV).each {|dataset|
-    csv = IO.binread(dataset).split("\n")
+    csv = File.binread(dataset).split("\n")
     _, team_a, team_b = csv.shift.split(',')
     dominion_a = dominion_b = dominion_draw = 0
     # Skip setup step
